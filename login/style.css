@@ -8,7 +8,9 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+h1{
+    text-align: center;
+}
 .container{
     width: 450px;
     background-color: #f4f4f4;

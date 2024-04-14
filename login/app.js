@@ -6,20 +6,41 @@ const getfirstname = document.getElementById('firstname'),
       getcfmpassword = document.getElementById('cfmpassword');
 const getshowpassword = document.querySelector('.show-password'),
       getshowcfmpassword = document.querySelector('.show-cfmpassword');
+const registerform = document.getElementById('register');
+const errormsg = document.getElementById('passworderror');
+const getvalidage = document.getElementById('validage');
 
 
 
-getfirstname.addEventListener('keyup',function(){
-    // console.log(getfirstname.value);
+getfirstname.addEventListener('keyup', function () {
     const trimval = getfirstname.value.trimLeft();
     getfirstname.value = trimval;
 });
 
+function validpassword() {
+    if (getpassword.value !== getcfmpassword.value) {
+        errormsg.innerText = "Passwords do not match";
+        return false;
+    } else {
+        errormsg.textContent = "";
+        return true;
+    }
+}
 
-getlastname.addEventListener('keyup',function(){
-    // console.log(getlastname.value);
-});
+function validage() {
+    if (getage.value < 18 ) {
+        getvalidage.innerText = "Your age must be over 18";
+        getvalidage.style.color = "red";
 
+        setTimeout(function(){
+            getvalidage.innerText = "";
+        },2000);
+
+        return false;
+    } else {
+        return true;
+    }
+}
 
 
 // getshowpassword.addEventListener('click',function(){
@@ -44,16 +65,42 @@ getlastname.addEventListener('keyup',function(){
 //     }
 // });
 
-getshowpassword.addEventListener('click', function() {
+
+
+getshowpassword.addEventListener('click', function () {
     getpassword.type = (getpassword.type === "password") ? "text" : "password";
     getshowpassword.innerHTML = (getpassword.type === "password") ? `<i class="fas fa-lock"></i>` : `<i class="fas fa-lock-open"></i>`;
 });
 
-getshowcfmpassword.addEventListener('click', function() {
+
+
+getshowcfmpassword.addEventListener('click', function () {
     getcfmpassword.type = (getcfmpassword.type === "password") ? "text" : "password";
     getshowcfmpassword.innerHTML = (getcfmpassword.type === "password") ? `<i class="fas fa-lock"></i>` : `<i class="fas fa-lock-open"></i>`;
 });
 
 
+function limitedage(){
+    if (getage.value.length > 2) {
+        getage.value = this.value.slice(0, 2); // Limit to 2 digits
+    }
+}
+
+
+getage.addEventListener('input',limitedage);
+
+
+function formsubmit(e){
+    if (!validpassword() || !validage()) {
+        e.preventDefault();
+    } else {
+        console.log("Form submitted successfully");
+        alert("Form submitted successfully");
+        window.location.reload();
+    }
+}
+
+registerform.addEventListener('submit',formsubmit);
+getage.addEventListener('input',limitedage);
 
 

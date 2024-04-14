@@ -11,7 +11,7 @@
 
         <h1>Register</h1>
 
-        <form action="" method="">
+        <form action="" method="" id="register" class="register">
 
             <div class="form-group">
                 
@@ -22,7 +22,8 @@
                 <input type="text" name="lastname" id="lastname" class="form-controls" autocomplete="off" placeholder="Enter your last name" required />
 
                 <label for="age">Age:</label>
-                <input type="number" name="age" id="age" class="form-controls" autofocus placeholder="Enter your age" required title="Please enter your age (must be over 18)." min="0" max="99" />
+                <input type="number" name="age" id="age" class="form-controls" autofocus placeholder="Enter your age" required title="Please enter your age (must be over 18)." min="0" max="99" maxlength="2" />
+                <span id="validage"></span>
 
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" class="form-controls" autofocus placeholder="Enter your email" required />
@@ -34,6 +35,7 @@
                 <label for="cfmpassword">Confirm Password</label>
                 <input type="password" name="cfmpassword" id="cfmpassword" class="form-controls" placeholder="Re-enter your password" required />
                 <span class="show-cfmpassword"><i class="fas fa-lock"></i></span>
+                <span id="passworderror" class="passworderror"></span>
 
             </div>
             
