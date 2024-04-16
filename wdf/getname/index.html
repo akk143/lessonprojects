@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 300px;
+            background-color: #f4f4f4;
+            box-shadow: 5px -4px 5px rgba(0,0,0,.5);
+            padding: 20px;
+        }
+        .form-group label{
+            display: block;
+            margin: 10px;
+        }
+        .form-control{
+            width: 100%;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        .btn{
+            width: 100%;
+            background-color: steelblue;
+            color: #fff;
+
+            padding: 7px 0;
+
+        }
+        .btn span{
+            position: relative;
+        }
+        .btn span::before{
+            content: "\f118";
+            font-family: "Font Awesome 5 Free";
+
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            opacity: 0;
+
+        }
+        .btn:hover span::before{
+            opacity: 1;
+        }
+        .btn:hover span{
+            padding-left: 30px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <h3>Show Name = <span id="replacename"></span></h3>
+        
+        <form action="" method="">
+
+            <div class="form-group">
+
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="enter your firstname" autofocus autocomplete="off" />
+    
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="enter your lastname" autocomplete="off" />
+    
+            </div>
+
+        </form>
+
+        <button type="button" class="btn" onclick="getdata()">Get Name<span></span></button>
+        
+    </div>
+
+
+    <script type="text/javascript">
+
+        function getdata(){
+
+            const getfirstname = document.getElementById('firstname');
+            const getlastname = document.getElementById('lastname');
+            const getreplacetname = document.getElementById('replacename');
+
+            getreplacetname.innerText = `${getfirstname.value}  ${getlastname.value}`;
+
+            document.getElementById('firstname').value = "";
+            document.getElementById('lastname').value = "";
+            document.getElementById('firstname').focus();
+
+        }
+
+    </script>
+
+</body>
+</html>
