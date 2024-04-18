@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modal Box with Boostrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 600px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>Modal Box with Boostrap</h1>
+        <button type="button" id="mybtn" class="btn btn-warning rounded-pill text-white">Open</button>
+
+        <div  id="mymodal" class="modal">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-head">
+                        <h3 class="modal-title">Modal Title</h3>
+                        <button type="button" class="btn closebtn" data-bs-modal="dismiss"></button>
+                    </div>
+
+                    <div class="modal-body"></div>
+                    <p>A quick brown fox jumps over the lazy dog.</p>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btnclose btn-info">Close</button>
+                        <button type="button" class="btn btnsave btn-success">Save</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            $('#mybtn').click(function(){
+                $('#mymodal').modal('toggle');
+            });
+
+            $('.btnclose').click(function(){
+                $('#mymodal').modal('toggle');
+            });
+
+
+        });
+
+    </script>
+
+</body>
+</html>

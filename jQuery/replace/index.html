@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 500px;
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 5px 4px 4px rgba(0,0,0,0.4);
+
+            padding: 20px;
+        }
+        .justify-content-end{
+            display: flex;
+            justify-content: end;
+        }
+        .btn{
+            background: none;
+            border: 2px solid gray;
+            padding: 5px;
+        }
+        h1{
+            color: green;
+        }
+        h2{
+            color: steelblue;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>This is Sample Text</h1>
+        <p><b>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</b></p>
+
+        <div class="justify-content-end">
+            <input type="button" class="btn"  value="Click Me"/>
+        </div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            $(".btn").click(function(){
+                $('h1').replaceWith("<h2>Thanks for clicking me</h2>");
+                $('p').replaceWith("<p><i style='color:red;'>A quick brown fox jumps over the lazy dog.</i></p>");
+                $(".btn").replaceWith('<button type="button" class="bnt" style="padding:5px; background:none">Thank You!</button>')
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
