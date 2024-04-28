@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visa Card</title>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="visa-card">
+
+            <form action="" method="">
+
+                <div class="logo">
+                    <img src="./img/image.png" class="visalogo" alt="visalogo" />
+                </div>
+
+                <div class="card-number">
+                    <label for="card-digit">Card Number</label>
+                    <input type="text" name="card-digit" id="card-digit" class="form-control" placeholder="123 123 123 123 123" maxlength="20" />
+                    <span class="underline"></span>
+                </div>
+
+                <br/><br/>
+
+                <div class="form-group">
+
+                    <div class="card-holder">
+                        <label for="card-name">Card Holder</label>
+                        <input type="text" name="card-name" id="card-name" class="form-control"  placeholder="Your Full Name" required />
+                        <span class="underline"></span>
+                    </div>
+    
+                    <div class="card-date">
+                        <label for="card-exp">Exp.Date</label>
+                        <input type="text" name="card-exp" id="card-exp" class="form-control" placeholder="1/24" maxlength="4" />
+                        <span class="underline"></span>
+                    </div>
+    
+                    <div class="card-code">
+                        <label for="card-ccv">CCV</label>
+                        <input type="text" name="card-ccv" id="card-ccv" class="form-control" placeholder="232"  maxlength="3"/>
+                        <span class="underline"></span>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="./app.js" type="text/javascript"></script>
+
+</body>
+</html>

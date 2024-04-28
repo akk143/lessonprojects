@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    position: relative;
+}
+.controls{
+    width: 80%;
+    background-color: #222;
+    color: #fff;
+
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+    padding: 12px 0;
+}
+.ctrl-btn{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: 0;
+    margin: 0 5px;
+
+    cursor: pointer;
+}
+.progress{
+    width: 70%;
+    height: 4px;
+    background-color: #fff;
+
+    border-radius: 7px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.progressbar{
+    width: 0%;
+    height: 100%;
+    background-color: steelblue;
+
+    border-radius: 7px;
+    cursor: pointer;
+}
+.openfullscreen,.closefullscreen{
+    cursor: pointer;
+    margin: 0 5px;
+}
+.closefullscreen{
+    display: none;
+}
+.displaytime{
+    margin-right: 7px;
+}
+.volprogress{
+    margin-right: 10px;
+}
+.fa-play{
+    color: steelblue;
+}
+.fa-stop{
+    color: tomato;
+}
+.panel{
+    background-color: #000;
+    color: #fff;
+
+    position: absolute;
+    left: 10%;
+    top: 50%;
+
+    z-index: -1;
+
+    padding: 0 30px;
+
+    transition: all .5 ease-out;
+}
+.container:hover .panel{
+    top: 100%;
+}
